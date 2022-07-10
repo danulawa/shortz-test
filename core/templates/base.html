@@ -10,7 +10,7 @@
 
     <title>{% block title %} {% endblock %}</title>
   </head>
-  <body>
+  <body class = 'bg-dark'>
     <div class="container mt-3">
         {% for message in get_flashed_messages() %}
             <div class="alert alert-danger">{{ message }}</div>
