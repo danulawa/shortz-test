@@ -8,13 +8,13 @@
         <div class="col-md-2"></div>
         <div class="col-md-8">
             <form method="post" action="{{url_for('index')}}">
-            <div class="text-primary form-floating mb-3">
+            <div class="text-white form-floating mb-3">
                 <input type="text" name="url" id="url"
                     placeholder="Enter looooooooooooong URL" class="form-control bg-dark"
                     value="{{ request.form['url'] }}" autofocus></input>
                 <label for="url">Long URL</label>
             </div>
-            <div class="text-primary form-floating mb-3">
+            <div class="text-white form-floating mb-3">
                 <input type="text" name="custom_id" id="custom_id"
                     placeholder="Want to customise? (optional)" class="form-control bg-dark"
                     value="{{ request.form['custom_id'] }}"></input>
