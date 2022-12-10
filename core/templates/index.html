@@ -41,7 +41,7 @@
             <tbody>
                 {% for row in datas %}
                 <tr>
-                    <td>{{row.original_url}}</td>
+                    <td style="overflow:hidden;text-overflow:ellipsis;">{{row.original_url}}</td>
                     <td>{{row.short_id}}</td>
                 </tr>
                 {%endfor%}
