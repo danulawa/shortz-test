@@ -30,6 +30,27 @@
             <hr>
             <span><a href="{{ short_url }}" target="_blank">{{ short_url }}</a></span>
             {% endif %}
+
+        <br><br>
+
+        <table class='table table-bordered'>
+            <thead>
+                <th>ID</th>
+                <th>Orginal URL</th>
+                <th>Short ID</th>
+                <th>Created At</th>
+            </thead>
+            <tbody>
+                {% for row in datas %}
+                <tr>
+                    <td>{{loop.index}}</td>
+                    <td>{{row.original_url}}</td>
+                    <td>{{row.short_id}}</td>
+                    <td>{{row.created_at}}</td>
+                </tr>
+                {%endfor%}
+            </tbody>
+            </table>
         </div>
         <div class="col-md-2"></div>
     </div>

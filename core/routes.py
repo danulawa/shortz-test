@@ -4,6 +4,7 @@ from core import app, db
 from random import choice
 import string
 from flask import render_template, request, flash, redirect, url_for
+import sqlite3 as sql
 
 
 def generate_short_id(num_of_chars: int):
@@ -13,6 +14,17 @@ def generate_short_id(num_of_chars: int):
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+
+    # data = ShortUrls.query
+
+    # return render_template('index.html', short_url=data)
+    con=sql.connect("db_web.db")
+    con.row_factory=sql.Row
+    cur=con.cursor()
+    cur.execute("select * from short_urls")
+    data=cur.fetchall()
+    return render_template("index.html",datas=data)
+
     if request.method == 'POST':
         url = request.form['url']
         short_id = request.form['custom_id']
