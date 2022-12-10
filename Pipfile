@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 flask-migrate = "*"
-flask-sqlalchemy = "2.5.1"
+flask-sqlalchemy = "*"
 psycopg2 = "*"
 gunicorn = "*"
 python-decouple = "*"
