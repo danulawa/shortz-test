@@ -15,38 +15,34 @@ def generate_short_id(num_of_chars: int):
 @app.route('/', methods=['GET', 'POST'])
 def index():
 
+    if request.method == 'POST':
+        url = request.form['url']
+        short_id = request.form['custom_id']
 
-    con=sql.connect("db_web.db")
-    con.row_factory=sql.Row
-    cur=con.cursor()
-    cur.execute("select * from short_urls")
-    data=cur.fetchall()
-    return render_template("index.html",datas=data)
+        if short_id and ShortUrls.query.filter_by(short_id=short_id).first() is not None:
+            flash('Please enter different custom id!')
+            return redirect(url_for('index'))
 
-    # if request.method == 'POST':
-    #     url = request.form['url']
-    #     short_id = request.form['custom_id']
+        if not url:
+            flash('The URL is required!')
+            return redirect(url_for('index'))
 
-    #     if short_id and ShortUrls.query.filter_by(short_id=short_id).first() is not None:
-    #         flash('Please enter different custom id!')
-    #         return redirect(url_for('index'))
+        if not short_id:
+            short_id = generate_short_id(8)
 
-    #     if not url:
-    #         flash('The URL is required!')
-    #         return redirect(url_for('index'))
+        new_link = ShortUrls(
+            original_url=url, short_id=short_id, created_at=datetime.now())
+        db.session.add(new_link)
+        db.session.commit()
+        short_url = request.host_url + short_id
 
-    #     if not short_id:
-    #         short_id = generate_short_id(8)
+        all_data = ShortUrls.query.all()
 
-    #     new_link = ShortUrls(
-    #         original_url=url, short_id=short_id, created_at=datetime.now())
-    #     db.session.add(new_link)
-    #     db.session.commit()
-    #     short_url = request.host_url + short_id
+        return render_template('index.html', short_url=short_url,datas=all_data)
 
-    #     return render_template('index.html', short_url=short_url)
 
-    # return render_template('index.html')
+    all_data = ShortUrls.query.all()
+    return render_template("index.html",datas=all_data)
 
 
 
