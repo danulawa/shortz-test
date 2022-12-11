@@ -1,3 +1,4 @@
+from ast import Delete
 from datetime import datetime
 from core.models import ShortUrls
 from core import app, db
@@ -30,8 +31,7 @@ def index():
         if not short_id:
             short_id = generate_short_id(8)
 
-        new_link = ShortUrls(
-            original_url=url, short_id=short_id, created_at=datetime.now())
+        new_link = ShortUrls(original_url=url, short_id=short_id, created_at=datetime.now())
         db.session.add(new_link)
         db.session.commit()
         short_url = request.host_url + short_id
@@ -54,3 +54,41 @@ def redirect_url(short_id):
     else:
         flash('Invalid URL')
         return redirect(url_for('index'))
+
+
+@app.route('/update/<id>', methods=['GET', 'POST'])
+def update(id):
+
+    if request.method == 'POST':
+
+        url = request.form['url']
+        short_id = request.form['custom_id']
+
+        UpdatedUrl = ShortUrls.query.filter_by(id=id).first()
+
+        UpdatedUrl.id = id
+        UpdatedUrl.original_url = url
+        UpdatedUrl.short_id = short_id
+        
+        db.session.commit()
+        short_url = request.host_url + short_id
+
+        all_data = ShortUrls.query.all()
+
+        return render_template('index.html', datas=all_data)
+    
+    row_data = ShortUrls.query.filter_by(id=id).first()
+    return render_template('update.html',datas=row_data)
+
+
+@app.route('/delete/<id>', methods=['GET', 'POST'])
+def delete(id):
+
+    DeleteRow = ShortUrls.query.filter_by(id=id).first()
+
+    db.session.delete(DeleteRow)       
+    db.session.commit()
+
+    all_data = ShortUrls.query.all()
+
+    return render_template('index.html', datas=all_data)

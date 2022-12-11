@@ -7,12 +7,24 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link href="css/style.css" rel="stylesheet">
     <link rel="shortcut icon" href="Img/Shortz-Logo.png">
+
+    <style>
+
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover, 
+        input:-webkit-autofill:focus, 
+        input:-webkit-autofill:active{
+            -webkit-box-shadow: 0 0 0 30px rgb(20, 23, 25) inset !important;
+            -webkit-text-fill-color: white;
+        }
+
+    </style>
 
     <title>{% block title %} {% endblock %}</title>
   </head>
   <body class = 'bg-dark'>
+
     <div class="container mt-3">
         {% for message in get_flashed_messages() %}
             <div class="alert alert-danger">{{ message }}</div>
