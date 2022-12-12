@@ -1,7 +1,7 @@
 from ast import Delete
 from datetime import datetime
 
-from flask_login import login_required
+# from flask_login import login_required
 from core.models import ShortUrls, UserInfo
 from core import app, db
 from random import choice
