@@ -6,6 +6,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- HTML Title -->
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="icon" href="{%static 'Img/Shortz-Logo.png'%}}" type="image/icon type">
+
     <!-- Work Sans Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
@@ -82,10 +86,6 @@
         right: 100px;
       }
     </style>
-
-    <title>{% block title %} {% endblock %}</title>
-    <link rel="icon" href="Img/Shortz-Logo.png" type="image/icon type">
-
 
   </head>
   <body class = 'bg-dark' id = 'bodyCSS'>
