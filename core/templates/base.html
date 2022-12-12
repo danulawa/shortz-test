@@ -157,17 +157,11 @@
   <body class = 'bg-dark' id = 'bodyCSS'>
 
     <div class="container mt-3">
-      <div class="row">
-        <div class="col-10 menu-style-1 border-style-2">
           <a href='/' class='btn btn-md btn-success menu-style-2 border-style-2'>Home</a>
           <a href='/all-links' class='btn btn-md btn-success menu-style-2 border-style-2'>All Links</a>
           <a href='/new-link' class='btn btn-md btn-success menu-style-2 border-style-2'>New Link</a>
           <a href='/all-users' class='btn btn-md btn-success menu-style-2 border-style-2'>User Profile</a>
-        </div>
-        <div class="col-1 menu-style-1 border-style-2">
           <a href='#' class='btn btn-md btn-success menu-style-3 border-style-2'>Log Out</a>
-        </div>
-      </div>
     </div>
     <div class="container mt-3">
         {% for message in get_flashed_messages() %}
