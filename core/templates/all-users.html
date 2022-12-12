@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <br>
+    <h3 class="text-white text-center mb-3">{% block title %} All Users {% endblock %}</h3>
+    <br>
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-12">
+
+            <table class='table table-dark'>
+                <thead>
+                    <th>Username</th>
+                    <th>E-Mail</th>
+                </thead>
+                <tbody>
+                    {% for row in datas %}
+                    <tr style="height: 55px;">
+                        <td class="td-original-url">{{row.username}}</td>
+                        <td class="td-short-id">{{row.usermail}}</td>
+                    </tr>
+                    {%endfor%}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+    <br><br>
+{% endblock %}

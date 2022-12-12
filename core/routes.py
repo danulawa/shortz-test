@@ -10,18 +10,36 @@ from flask import render_template, request, flash, redirect, url_for
 import sqlite3 as sql
 
 
+
+# =====================================================
+# Menu Management
+# =====================================================
+
+@app.route('/')
+def home_page():
+    return render_template("index.html")
+
+@app.route('/all-links')
+def all_links_page():
+    all_data = ShortUrls.query.all()
+    return render_template("all-links.html",datas=all_data)
+
+@app.route('/all-users')
+def all_users_page():
+    all_data = UserInfo.query.all()
+    return render_template("all-users.html",datas=all_data)
+
+
 # =====================================================
 # Link Management
 # =====================================================
-
-
 
 def generate_short_id(num_of_chars: int):
     """Function to generate short_id of specified number of characters"""
     return ''.join(choice(string.ascii_letters+string.digits) for _ in range(num_of_chars))
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/new-link', methods=['GET', 'POST'])
 def index():
 
     if request.method == 'POST':
@@ -46,11 +64,11 @@ def index():
 
         all_data = ShortUrls.query.all()
 
-        return render_template('index.html', short_url=short_url,datas=all_data)
+        return render_template('all-links.html', short_url=short_url,datas=all_data)
 
-
-    all_data = ShortUrls.query.all()
-    return render_template("index.html",datas=all_data)
+    return render_template("new-link.html")
+    # all_data = ShortUrls.query.all()
+    # return render_template("all-links.html",datas=all_data)
 
 
 
@@ -83,10 +101,10 @@ def update(id):
 
         all_data = ShortUrls.query.all()
 
-        return render_template('index.html', datas=all_data)
+        return render_template('all-links.html', datas=all_data)
     
     row_data = ShortUrls.query.filter_by(id=id).first()
-    return render_template('update.html',datas=row_data)
+    return render_template('edit-user.html',datas=row_data)
 
 
 @app.route('/delete/<id>', methods=['GET', 'POST'])
@@ -99,24 +117,24 @@ def delete(id):
 
     all_data = ShortUrls.query.all()
 
-    return render_template('index.html', datas=all_data)
+    return render_template('all-links.html', datas=all_data)
 
 
 # =====================================================
 # User Management
 # =====================================================
 
-@app.route('/login', methods=['GET', 'POST'])
-def login():
+# @app.route('/login', methods=['GET', 'POST'])
+# def login():
 
-    if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
+#     if request.method == 'POST':
+#         username = request.form['username']
+#         password = request.form['password']
 
-        if username and UserInfo.query.filter_by(username=username).first() is not None:
-            if password and UserInfo.query.filter_by(password=password).first() is not None:
+#         if username and UserInfo.query.filter_by(username=username).first() is not None:
+#             if password and UserInfo.query.filter_by(password=password).first() is not None:
                 
-                return redirect(url_for('index'))
+#                 return redirect(url_for('index'))
 
 # @app.route('/all-user', methods=['GET', 'POST'])
 # def all_user():

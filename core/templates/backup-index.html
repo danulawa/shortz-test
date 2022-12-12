@@ -1,0 +1,72 @@
+
+
+
+<!-- {% extends 'base.html' %}
+{% block content %}
+
+    <br>
+    <h3 class="text-white text-center mb-3">{% block title %} Welcome to Shortz {% endblock %}</h3>
+    <br>
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <form method="post" action="{{url_for('index')}}">
+                
+                <div class="text-white form-floating mb-3">
+                    <input type="text" name="url" id="url" placeholder="Long URL" class="form-control bg-dark text-white border-style-1"></input>
+                    <label for="url">Long URL</label>
+                </div>
+                
+                <div class="text-white form-floating mb-3">
+                    <input type="text" name="custom_id" id="custom_id" placeholder="Custom ID" class="form-control bg-dark text-white border-style-1"></input>
+                    <label for="custom_id">Custom Short ID</label>
+                </div>
+
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-md btn-primary border-style-1 action-short-link">Get Shortend Link</button>
+                </div>
+
+            </form>
+
+            {% if short_url %}
+            <hr><span><a href="{{ short_url }}" target="_blank">{{ short_url }}</a></span>
+            {% endif %}
+
+        </div>
+    </div>
+
+    <br><br>
+    <h3 class="text-white text-center mb-3">All Links</h3>
+    <br>
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-12">
+
+            <table class='table table-dark'>
+                <thead>
+                    <th>Original URL</th>
+                    <th>Short ID</th>
+                    <th>Actions</th>
+                </thead>
+                <tbody>
+                    {% for row in datas %}
+                    <tr style="height: 55px;">
+                        <td class="td-original-url">{{row.original_url}}</td>
+                        <td class="td-short-id">{{row.short_id}}</td>
+                        <td class="td-link-action"> 
+                            <a href='{{row.original_url}}' class='btn btn-md btn-success table-action border-style-1 action-redirect' target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
+                            <a href='/update/{{row.id}}' class='btn btn-md btn-warning table-action border-style-1 action-edit' data-target="#modaledit{{row.id}}"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <a href='/delete/{{row.id}}' class='btn btn-md btn-danger table-action border-style-1 action-delete' data-target="#modaledit{{row.id}}"><i class="fa-solid fa-trash"></i></a>
+                        </td>
+                    </tr>
+                    {%endfor%}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+    <br><br>
+{% endblock %} -->

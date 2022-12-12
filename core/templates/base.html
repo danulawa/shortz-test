@@ -64,7 +64,64 @@
       .table-action:focus{
         width: 50px;
         margin-right: 10px;
+      }
+
+      .action-short-link{
         color: white;
+        background-color: rgb(43, 49, 54);
+        border-color: white;
+        font-style: bold;
+      }
+
+      .action-short-link:hover,
+      .action-short-link:active,
+      .action-short-link:focus{
+        color: white;
+        background-color: #0d6efd;
+        font-style: bold;
+        border-color: #0d6efd;
+      }
+
+      .action-redirect{
+        color: #198754;
+        background-color: rgb(43, 49, 54);
+        border:rgb(43, 49, 54);
+      }
+
+      .action-redirect:hover,
+      .action-redirect:active,
+      .action-redirect:focus{
+        color: rgb(43, 49, 54);
+        background-color: #198754;
+        border-color:#198754;
+      }
+
+      .action-edit{
+        color: #ffc107;
+        background-color: rgb(43, 49, 54);
+        border-color:rgb(43, 49, 54);
+      }
+
+      .action-edit:hover,
+      .action-edit:active,
+      .action-edit:focus{
+        color: rgb(43, 49, 54);
+        background-color: #ffc107;
+        border-color: #ffc107;
+      }
+
+      .action-delete{
+        color: #dc3545;
+        background-color: rgb(43, 49, 54);
+        border-color:rgb(43, 49, 54);
+      }
+
+      .action-delete:hover,
+      .action-delete:active,
+      .action-delete:focus{
+        color: rgb(43, 49, 54);
+        background-color: #dc3545;
+        border-color:#dc3545;
       }
 
       .menu-style-1{
@@ -90,8 +147,10 @@
   <body class = 'bg-dark' id = 'bodyCSS'>
 
     <div class="container mt-3 menu-style-1 border-style-2">
-      <a href='#' class='btn btn-md btn-success menu-style-2 border-style-2'>All Links</a>
-      <a href='#' class='btn btn-md btn-success menu-style-2 border-style-2'>User Profile</a>
+      <a href='/' class='btn btn-md btn-success menu-style-2 border-style-2'>Home</a>
+      <a href='/all-links' class='btn btn-md btn-success menu-style-2 border-style-2'>All Links</a>
+      <a href='/new-link' class='btn btn-md btn-success menu-style-2 border-style-2'>New Link</a>
+      <a href='/all-users' class='btn btn-md btn-success menu-style-2 border-style-2'>User Profile</a>
       <a href='#' class='btn btn-md btn-success menu-style-3 border-style-2'>Log Out</a>
     </div>
 
