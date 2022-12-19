@@ -1,0 +1,194 @@
+:root{
+  --scroll-bar-color-1: #2b3136;
+  --scroll-bar-color-2: grey;
+  --menu-bg-color-1: #2b3136; 
+  --btn-menu-highlight-color-1: #198754;
+  --btn-create-update-color-1: #212529;
+  --btn-create-update-color-2: #0d6efd;
+  --btn-info-color-1: #0d6efd;
+  --btn-copy-color-1: #d4009f;
+  --btn-redirect-color-1: #198754;
+  --btn-update-color-1: #fdcc37;
+  --btn-delete-color-1: #f14657;
+  --btn-common-color-1: #2b3136;
+  --btn-common-color-2: white;
+  --txt-color-1: white;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    box-shadow: 0 0 0 30px var(--scroll-bar-color-1) inset !important;
+    -webkit-text-fill-color: white;}
+
+body{
+  font-family: 'Work Sans', sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 2px var(--scroll-bar-color-2); 
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scroll-bar-color-1);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scroll-bar-color-1);
+}
+
+.border-style-1{
+  border-radius: 5px 5px 5px 5px;
+}
+
+.border-style-2{
+  border-radius: 5px 5px 5px 5px;
+}
+
+.border-style-3{
+  border-radius: 0px 0px 0px 0px;
+}
+
+.td-original-url{
+  width: 40%;
+  vertical-align: middle;
+}
+
+.td-short-id{
+  width: 25%;
+  vertical-align: middle;
+}
+
+.td-link-action{
+  width: 7%;
+  vertical-align: middle;
+}
+
+.table-action,
+.table-action:hover,
+.table-action:active,
+.table-action:focus{
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0;
+}
+
+.action-short-link{
+  color: var(--txt-color-1);
+  background-color: var(--btn-create-update-color-1);
+  border-color: var(--btn-common-color-2);
+  font-style: bold;
+}
+
+.action-short-link:hover,
+.action-short-link:active,
+.action-short-link:focus{
+  color: var(--btn-common-color-2);
+  background-color: var(--btn-create-update-color-2);
+  font-style: bold;
+  border-color: var(--btn-create-update-color-2);
+}
+
+.action-redirect{
+  color: var(--btn-redirect-color-1);
+  background-color: var(--menu-bg-color-1);
+  border-color: var(--menu-bg-color-1);
+}
+
+.action-redirect:hover,
+.action-redirect:active,
+.action-redirect:focus{
+  color: var(--btn-common-color-1);
+  background-color: var(--btn-redirect-color-1);
+  border-color: var(--btn-redirect-color-1);
+}
+
+.action-edit{
+  color: var(--btn-update-color-1);
+  background-color: var(--btn-common-color-1);
+  border-color: var(--btn-common-color-1);
+}
+
+.action-edit:hover,
+.action-edit:active,
+.action-edit:focus{
+  color: var(--btn-common-color-1);
+  background-color: var(--btn-update-color-1);
+  border-color: var(--btn-update-color-1);
+}
+
+.action-delete{
+  color: var(--btn-delete-color-1);
+  background-color: var(--btn-common-color-1);
+  border-color: var(--btn-common-color-1);
+}
+
+.action-delete:hover,
+.action-delete:active,
+.action-delete:focus{
+  color: var(--btn-common-color-1);
+  background-color: var(--btn-delete-color-1);
+  border-color:var(--btn-delete-color-1);
+}
+
+.action-info{
+  color: var(--btn-info-color-1);
+  background-color: var(--btn-common-color-1);
+  border-color: var(--btn-common-color-1);
+}
+
+.action-info:hover,
+.action-info:active,
+.action-info:focus{
+  color: var(--btn-common-color-1);
+  background-color: var(--btn-info-color-1);
+  border-color:var(--btn-info-color-1);
+}
+
+.action-copy{
+  color: var(--btn-copy-color-1);
+  background-color: var(--btn-common-color-1);
+  border-color: var(--btn-common-color-1);
+}
+
+.action-copy:hover,
+.action-copy:active,
+.action-copy:focus{
+  color: var(--btn-common-color-1);
+  background-color: var(--btn-copy-color-1);
+  border-color:var(--btn-copy-color-1);
+}
+
+.menu-style-1{
+  background-color: var(--btn-common-color-1);
+}
+
+.menu-style-2{
+  background-color: var(--btn-common-color-1);
+  margin-right: 10px;
+  border-color: var(--btn-common-color-1);
+}
+
+.menu-style-3{
+  background-color: var(--btn-common-color-1);
+  margin-right: 10px;
+  border-color: var(--btn-common-color-1);
+  position: absolute;
+  right: 110px;
+}
+
+.div-style-1{
+  width: 90%;
+}
+
+.div-style-2{
+  width: 10%;
+}

@@ -14,16 +14,28 @@
                     <th>Original URL</th>
                     <th>Short ID</th>
                     <th>Actions</th>
+                    <th></th><th></th>
+                    <th></th><th></th>
                 </thead>
                 <tbody>
                     {% for row in datas %}
                     <tr style="height: 55px;">
                         <td class="td-original-url">{{row.original_url}}</td>
                         <td class="td-short-id">{{row.short_id}}</td>
-                        <td class="td-link-action"> 
-                            <a href='{{row.original_url}}' class='btn btn-md btn-success table-action border-style-1 action-redirect' target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
-                            <a href='/update/{{row.id}}' class='btn btn-md btn-warning table-action border-style-1 action-edit' data-target="#modaledit{{row.id}}"><i class="fa-solid fa-pen-to-square"></i></a>
-                            <a href='/delete/{{row.id}}' class='btn btn-md btn-danger table-action border-style-1 action-delete' data-target="#modaledit{{row.id}}"><i class="fa-solid fa-trash"></i></a>
+                        <td class="td-link-action">
+                            <a href='#' class='table-action border-style-1 action-info'><i class="fa-solid fa-chart-simple"></i></a>
+                        </td>
+                        <td class="td-link-action">
+                            <a href='#' class='table-action border-style-1 action-copy'><i class="fa-solid fa-copy"></i></a> 
+                        </td>
+                        <td class="td-link-action">
+                            <a href='{{row.original_url}}' class='table-action border-style-1 action-redirect' target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
+                        </td>
+                        <td class="td-link-action">
+                            <a href='/update/{{row.id}}' class='table-action border-style-1 action-edit' data-target="#modaledit{{row.id}}"><i class="fa-solid fa-pen-to-square"></i></a>
+                        </td>
+                        <td class="td-link-action">
+                            <a href='/delete/{{row.id}}' class='table-action border-style-1 action-delete' data-target="#modaledit{{row.id}}"><i class="fa-solid fa-trash"></i></a>
                         </td>
                     </tr>
                     {%endfor%}
