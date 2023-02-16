@@ -13,4 +13,4 @@ MarkupSafe==2.1.1
 python-decouple==3.6
 python-dotenv==0.21.0
 SQLAlchemy==1.4.44
-Werkzeug==2.2.2
+Werkzeug==2.2.3
